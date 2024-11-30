@@ -3,7 +3,11 @@
   "compilerOptions": {
     "composite": true /* Enable project references. */,
     /* Modules */
-    "rootDir": "src" /* Specify the root folder within your source files. */,
+    "rootDir": "src" /* Specify the root folder within your source files.   */,
+
+    "types": ["cypress", "@testing-library/cypress"],
+    
+ 
 
     /* Emit */
     "outDir": "dist" /* Specify an output folder for all emitted files. */
