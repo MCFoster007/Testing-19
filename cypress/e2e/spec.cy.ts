@@ -1,13 +1,26 @@
+// describe('My First Test', () => {
+//   it('Gets, types and asserts', () => {
+//     cy.visit('https://example.cypress.io')
 
-describe('template spec', () => {
-  it('passes', () => {
-    cy.visit('http://localhost:3000/');
-  });
-})
+//     cy.contains('type').click()
+
+//     // Should be on a new URL which
+//     // includes '/commands/actions'
+//     cy.url().should('include', '/commands/actions')
+
+//     // Get an input, type into it
+//     cy.get('.action-email').type('fake@email.com')
+
+//     //  Verify that the value has been updated
+//     cy.get('.action-email').should('have.value', 'fake@email.com')
+//   })
+// })
+
+
 describe('Tech Quiz E2E Test', () => {
   beforeEach(() => {
     cy.intercept('GET', '/api/questions', { fixture: 'questions.json' }).as('getQuestions');
-    cy.visit('/');
+    cy.visit('http://127.0.0.1:3001/');
   });
 
   it('should start the quiz and complete it successfully', () => {
@@ -26,7 +39,6 @@ describe('Tech Quiz E2E Test', () => {
       cy.get('.alert-success').should('contain.text', `Your score: ${questions.length}/${questions.length}`);
     });
   });
-
   it('should allow retaking the quiz after completion', () => {
     cy.get('button').contains('Start Quiz').click();
     cy.wait('@getQuestions');
