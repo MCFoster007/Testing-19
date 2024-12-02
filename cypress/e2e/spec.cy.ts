@@ -9,9 +9,19 @@ describe("Quiz Test", () => {
     cy.get(".card").should("be.visible");
     cy.get("h2").should("not.be.empty");
   });
-  //next test goes here
-  //
-  it("Click the button to start", () => {
-  cy.get("button").click();
+
+  it("Should take answers to questions and complete quiz", () => {
+    cy.visit("http://localhost:3001");
+
+    // Start the quiz
+    cy.contains("Start Quiz").click();
+    for (let i = 0; i < 10; i++) {
+      cy.get("button").contains("1").should("be.visible").click();
+    }
+    // CHECKS IF THE QUIZ IS COMPLETED
+    cy.get(".alert-success").should("be.visible").contains("Your score:")
+    
+  });
 });
-//NO MORE CODSES GOES AFTER THIS LINE
+
+//NO MORE CODE GOES AFTER THIS LINE
