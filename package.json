@@ -14,7 +14,8 @@
     "client:dev": "cd client && npm run dev",
     "build": "cd server && npm run build",
     "seed": "cd server && npm run seed",
-    "render-build": "npm install && npm run build"
+    "render-build": "npm install && npm run build",
+    "cypress": "npx cypress open"
   },
   "keywords": [],
   "author": "",
@@ -22,7 +23,6 @@
   "devDependencies": {
     "@testing-library/cypress": "^10.0.2",
     "@types/cypress": "^0.1.6",
-    "@types/jest": "^29.5.14",
     "@types/react": "^18.3.3",
     "@vitejs/plugin-react": "^4.3.1",
     "babel-loader": "^9.2.1",
@@ -35,9 +35,7 @@
     "react-router-dom": "^6.25.1",
     "typescript": "^5.5.3",
     "vitest": "^2.0.3",
-    "wait-on": "^7.2.0",
-    "webpack": "^5.96.1",
-    "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^5.1.0"
+    "wait-on": "^7.2.0"
+  
   }
 }

@@ -1,32 +1,17 @@
+describe("Quiz Test", () => {
+  it("Loads the quiz question successfully", () => {
+    cy.visit("http://localhost:3001");
 
-describe('Quiz Test', () => {
-  it('Loads the quiz question successfully', () => {
-     cy.visit("http://localhost:3001");
+    // Start the quiz
+    cy.contains("Start Quiz").click();
 
-     // Start the quiz
-     cy.contains("Start Quiz").click();
-
-     // Wait for the question to appear
-     cy.contains("Which of the following is a valid variable name in Python?", { timeout: 10000 });
-
-     // Validate that the question is displayed
-     cy.get('.question').should('be.visible');
+    // Validate that the question is displayed
+    cy.get(".card").should("be.visible");
+    cy.get("h2").should("not.be.empty");
   });
+  //next test goes here
+  //
+  it("Click the button to start", () => {
+  cy.get("button").click();
 });
-
-
-// describe('My First Test', () => {
-//   it('Gets, contains, types and asserts', () => {
-//     cy.visit("http://localhost:3001/")
-
-//     cy.contains('Start Quiz').click()
-
-//     cy.contains('Which of the following is a valid variable name in Python?').click()
-
-//     // Get an input, type into it
-//     cy.contains('.answer').type('2')
-
-//     //  Verify that the value has been updated
-//     cy.get('.answer').should('have.value', 'variable_1')
-//   })
-// })
+//NO MORE CODSES GOES AFTER THIS LINE
