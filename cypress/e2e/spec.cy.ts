@@ -3,7 +3,7 @@ describe("Quiz Test", () => {
     cy.visit("http://localhost:3001");
 
     // Start the quiz
-    cy.contains("Start Quiz").click();
+    cy.contains(" Start Quiz").click();
 
     // Validate that the question is displayed
     cy.get(".card").should("be.visible");
